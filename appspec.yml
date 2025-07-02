@@ -3,7 +3,7 @@ Resources:
   - myECSService:
       Type: AWS::ECS::Service
       Properties:
-        ClusterName: happy-elephant-z06s7x  # Your ECS cluster name
+        ClusterName: ecstatic-rabbit-seun4j  # Your ECS cluster name
         ServiceName: ecs_taskdefinition-service-nu3355aw   # Your ECS service name
         TaskDefinition: imagedefinitions:1  # ECS task definition with the revision number
         LoadBalancerInfo:
