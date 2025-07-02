@@ -4,8 +4,8 @@ Resources:
       Type: AWS::ECS::Service
       Properties:
         ClusterName: ecstatic-rabbit-seun4j  # Your ECS cluster name
-        ServiceName: ecs_taskdefinition-service-nu3355aw   # Your ECS service name
-        TaskDefinition: imagedefinitions:1  # ECS task definition with the revision number
+        ServiceName: ecs-taskdefinition-service-nwlz26vw   # Your ECS service name
+        TaskDefinition: ecs-taskdefinition:2  # ECS task definition with the revision number
         LoadBalancerInfo:
           ContainerName: myecscontainer # Container name as defined in the task definition
           ContainerPort: 80  # The container port exposed
