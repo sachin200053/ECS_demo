@@ -12,23 +12,23 @@ phases:
       - echo Logging in to Docker Hub...
      # - DOCKER_USERNAME=$(aws secretsmanager get-secret-value --secret-id docker-hub-credentials1 --query SecretString --output text | jq -r .DOCKER_USERNAME)
       #- DOCKER_PASSWORD=$(aws secretsmanager get-secret-value --secret-id docker-hub-credentials1 --query SecretString --output text | jq -r .DOCKER_PASSWORD)
-      - DOCKER_USERNAME="rajcosivadevops"
-      - DOCKER_PASSWORD="your_actual_docker_password_here"
+      - DOCKER_USERNAME="sachinsharma7749"
+      - DOCKER_PASSWORD="DockerHub@2025"
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t cicdncplimage .
-      - docker tag cicdncplimage:latest rajcosivadevops/cicdncplimage:latest
+      - docker build -t indiancpl .
+      - docker tag indiancpl:latest sachinsharma7749/indiancpl:latest
 
   post_build:
     commands:
       - echo Pushing Docker image to Docker Hub...
-      - docker push rajcosivadevops/cicdncplimage:latest
+      - docker push sachinsharma7749/indiancpl:latest
       - echo Writing imagedefinitions.json...
       - ls -l
-      - printf '[{"name":"sprinrajco","imageUri":"rajcosivadevops/cicdncplimage:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"sachinsharma7749","imageUri":"sachinsharma7749/indiancpl:latest"}]' > imagedefinitions.json
       - echo Writing appspec.yml...
       
 
