@@ -3,7 +3,7 @@ Resources:
   - myECSService:
       Type: AWS::ECS::Service
       Properties:
-        ClusterName: First  # Your ECS cluster name
+        ClusterName: sachinECS_cluster  # Your ECS cluster name
         ServiceName: second  # Your ECS service name
         TaskDefinition: imagedefinitions:1  # ECS task definition with the revision number
         LoadBalancerInfo:
