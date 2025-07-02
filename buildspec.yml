@@ -19,16 +19,16 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t myecsimage .
-      - docker tag myecsimage:latest sachinsharma7749/myecsimage:latest
+      - docker build -t indiancpl .
+      - docker tag indiancpl:latest sachinsharma7749/indiancpl:latest
 
   post_build:
     commands:
       - echo Pushing Docker image to Docker Hub...
-      - docker push sachinsharma7749/myecsimage:latest
+      - docker push sachinsharma7749/indiancpl:latest
       - echo Writing imagedefinitions.json...
       - ls -l
-      - printf '[{"name":"myecscontainer","imageUri":"sachinsharma7749/myecsimage:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"myecscontainer","imageUri":"sachinsharma7749/indiancpl:latest"}]' > imagedefinitions.json
       - echo Writing appspec.yml...
       
 
